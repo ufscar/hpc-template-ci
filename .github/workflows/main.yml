@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: /bin/bash .github/workflows/setup.sh
       - name: Build Singularity image
-        run: singularity build Singularity.simg Singularity
+        run: sudo singularity build Singularity.simg Singularity
       - name: Send files
         run: /bin/bash .github/workflows/send.sh google Singularity Singularity.simg
