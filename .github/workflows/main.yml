@@ -18,9 +18,13 @@ jobs:
       - name: Install dependencies
         run: /bin/bash .github/workflows/setup.sh
       - name: Create token file
+        env:
+          SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
         run: echo "$SYLABS_TOKEN" > token_file
-      - name: Test cat
-        run: cat .github/workflows/setup.sh
+      - name: Test echo
+        env:
+          SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
+        run: echo "$SYLABS_TOKEN"
       - name: Shows token
         run: cat token_file
       - name: Login scylabs
@@ -28,4 +32,7 @@ jobs:
       - name: Build Singularity image
         run: singularity build --remote Singularity.simg Singularity
       - name: Send files
+        env:
+          CREDENTIALS_GOOGLE: ${{ secrets.CREDENTIALS_GOOGLE }}
+          COLLECTION_CONTAINER: ${{ secrets.COLLECTION_CONTAINER }}
         run: /bin/bash .github/workflows/send.sh google Singularity Singularity.simg

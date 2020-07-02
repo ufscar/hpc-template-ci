@@ -14,7 +14,7 @@ from google.auth.transport.requests import Request
 COLLECTION_CONTAINER = os.getenv('COLLECTION_CONTAINER', 'collection/container')
 COLLECTION = '/'.join(COLLECTION_CONTAINER.split('/')[:-1])
 CONTAINER = COLLECTION_CONTAINER.split('/')[-1]
-CREDENTIALS = os.getenv('CREDENTIALS', '').strip()
+CREDENTIALS = os.getenv('CREDENTIALS_GOOGLE', '').strip()
 if CREDENTIALS == '':
     print('''ERRO! Favor definir a variável de ambiente CREDENTIALS com o resultado de
     python3 get_google_token.py
