@@ -6,7 +6,7 @@ fi
 plat=$1
 shift
 if [[ $plat == "google" ]]; then
-  python3 .github/send_google.py "$@"
+  python3 .github/workflows/send_google.py "$@"
 else
   echo "Plataforma desconhecida: $plat"
 fi
