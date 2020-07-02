@@ -17,7 +17,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install dependencies
         run: /bin/bash .github/workflows/setup.sh
+      - name: Create token file
+        run: echo "$SYLABS_TOKEN" > token_file
+      - name: Shows token
+        run: cat token_file
+      - name: Login scylabs
+        run: singularity remote login --tokenfile token_file
       - name: Build Singularity image
-        run: echo $SYLABS_TOKEN > token_file && singularity remote login --tokenfile token_file && singularity build --remote Singularity.simg Singularity
+        run: singularity build --remote Singularity.simg Singularity
       - name: Send files
         run: /bin/bash .github/workflows/send.sh google Singularity Singularity.simg
