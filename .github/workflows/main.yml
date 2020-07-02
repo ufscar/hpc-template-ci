@@ -21,10 +21,10 @@ jobs:
         env:
           SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
         run: echo "$SYLABS_TOKEN" > token_file
-      - name: Login SyLabs
+      - name: Login Sylabs
         run: singularity remote login --tokenfile token_file
       - name: Build Singularity image
-        run: singularity build --remote Singularity.simg Singularity
+        run: singularity build Singularity.simg Singularity
       - name: Send files
         env:
           CREDENTIALS_GOOGLE: ${{ secrets.CREDENTIALS_GOOGLE }}
