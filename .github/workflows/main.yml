@@ -21,13 +21,7 @@ jobs:
         env:
           SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
         run: echo "$SYLABS_TOKEN" > token_file
-      - name: Test echo
-        env:
-          SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
-        run: echo "$SYLABS_TOKEN"
-      - name: Shows token
-        run: cat token_file
-      - name: Login scylabs
+      - name: Login SyLabs
         run: singularity remote login --tokenfile token_file
       - name: Build Singularity image
         run: singularity build --remote Singularity.simg Singularity
