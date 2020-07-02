@@ -1,0 +1,22 @@
+name: HPC CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    container: quay.io/singularity/singularity:v3.5.3
+
+    steps:
+      - name: Install dependencies
+        run: /bin/bash .github/setup.sh
+      - name: Build Singularity image
+        run: singularity build Singularity.simg Singularity
+      - name: Send files
+        run: /bin/bash .github/send.sh google Singularity Singularity.simg
