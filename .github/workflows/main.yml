@@ -15,9 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name:
-      - name: List files
-        run: ls ..
       - name: Install dependencies
         run: /bin/bash .github/workflows/setup.sh
       - name: Build Singularity image
