@@ -19,6 +19,8 @@ jobs:
         run: /bin/bash .github/workflows/setup.sh
       - name: Create token file
         run: echo "$SYLABS_TOKEN" > token_file
+      - name: Test cat
+        run: cat .github/workflows/setup.sh
       - name: Shows token
         run: cat token_file
       - name: Login scylabs
