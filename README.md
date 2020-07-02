@@ -15,4 +15,3 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 9. Execute o script `python3 get_google_token.py`.
 10. Adicione o conteúdo indicado na saída na variável de ambiente CREDENTIALS_GOOGLE no github (projeto >> Settings >> Secrets >> New Secret).
 11. Adicione no github à variável COLLECTION_CONTAINER `/path/to/project`, esse será o caminho cujo container vai ser disponibilizado no seu Google Drive no formato `recipe_nameDateTime.simg`.
-12. Acessar o site da [Sylabs Cloud](cloud.sylabs.io), criar um _access token_, copiar e adicionar na variável SYLABS_TOKEN no github 
