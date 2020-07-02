@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: List files
-        run: ls
+        run: ls ..
       - name: Install dependencies
         run: /bin/bash .github/setup.sh
       - name: Build Singularity image
