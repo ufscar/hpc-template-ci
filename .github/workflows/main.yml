@@ -24,7 +24,7 @@ jobs:
       - name: Login Sylabs
         run: singularity remote login --tokenfile token_file
       - name: Build Singularity image
-        run: singularity build Singularity.simg Singularity
+        run: singularity build --remote Singularity.simg Singularity
       - name: Send files
         env:
           CREDENTIALS_GOOGLE: ${{ secrets.CREDENTIALS_GOOGLE }}
