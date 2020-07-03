@@ -33,6 +33,5 @@ jobs:
           COLLECTION_CONTAINER: ${{ secrets.COLLECTION_CONTAINER }}
           ACCESS_KEY_AWS: ${{ secrets.ACCESS_KEY_AWS }}
           SECRET_KEY_AWS: ${{ secrets.SECRET_KEY_AWS }}
-          TESTE: ${{ secrets.TESTE }}
           CLIENT: ${{ secrets.CLIENT }}
         run: /bin/bash .github/workflows/send.sh Singularity Singularity.simg
