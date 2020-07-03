@@ -16,6 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
+        env:
+          CLIENT: ${{ secrets.CLIENT }}
         run: /bin/bash .github/workflows/setup.sh
       - name: Create token file
         env:
@@ -29,4 +31,7 @@ jobs:
         env:
           CREDENTIALS_GOOGLE: ${{ secrets.CREDENTIALS_GOOGLE }}
           COLLECTION_CONTAINER: ${{ secrets.COLLECTION_CONTAINER }}
+          ACCESS_KEY_AWS: ${{ secrets.ACCESS_KEY_AWS }}
+          SECRET_KEY_AWS: ${{ secrets.SECRET_KEY_AWS }}
+          TESTE: ${{ secrets.TESTE }}
         run: /bin/bash .github/workflows/send.sh google Singularity Singularity.simg

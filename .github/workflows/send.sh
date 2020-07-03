@@ -6,7 +6,9 @@ fi
 plat=$1
 shift
 if [[ $plat == "google" ]]; then
-  python3 .github/workflows/send_google.py "$@"
+  python3 .gitlabci/send_google.py "$@"
+elif [[ $plat == "aws" ]]; then
+  python3 .gitlabci/send_aws.py "$@"
 else
   echo "Plataforma desconhecida: $plat"
 fi
