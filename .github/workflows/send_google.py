@@ -72,12 +72,14 @@ def upload(fn: str, serv) -> str:
         mt = mimetypes.guess_type(fn, strict=False)[0]
         media = MediaFileUpload(fn, mimetype=mt)
         hj = re.sub(r'\D', '', str(dt2.now()))
-        f = serv.files().create(media_body=media,
-                                body={"name": fn.split(os.sep)[-1]+hj,
+        f, e = os.path.splitext(fn)
+        f = os.path.split(f)
+        r = serv.files().create(media_body=media,
+                                body={"name": f+hj+e,
                                       "mimeType": mt,
                                       "parents": [id]},
                                 fields='id').execute()
-        return f"https://drive.google.com/open?id={f.get('id')}"
+        return f"https://drive.google.com/open?id={r.get('id')}"
     except Exception as err:
         print(f'upload() - {err}')
 

@@ -42,7 +42,9 @@ def create_bucket(serv: Any, bucket_name: str = 'hpc') -> str:
 def upload(fn: str, serv: Any, bucket: str) -> bool:
     folders = ['containers']+COLLECTION_CONTAINER.split('/')
     hj = re.sub(r'\D', '', str(dt2.now()))
-    object_name = '/'.join(folders+[fn.split(os.sep)[-1]+hj])
+    f, e = os.path.splitext(fn)
+    f = os.path.split(f)
+    object_name = '/'.join(folders+[f+hj+e])
 
     try:
         serv.upload_file(fn, bucket, object_name)

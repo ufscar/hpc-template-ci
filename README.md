@@ -1,6 +1,6 @@
 # Template Integração Contínua Github
 
-Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e AWS S3.
+Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e Amazon S3.
 
 ## Requisitos para Google Drive
 
@@ -30,3 +30,35 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 6. Copie o conteúdo de "Secret Access Key" na variável SECRET_KEY_AWS no github.
 7. Acessar o site da [Sylabs Cloud](cloud.sylabs.io), criar um _access token_, copiar e adicionar na variável SYLABS_TOKEN no github.
 8. Adicione no github à variável CLIENT `aws`.
+
+# Instruções para configuração de input/output em nuvem
+
+Para esse serviço usaremos o _software_ rclone, tanto para Google Drive quanto para Amazon S3.
+
+## Google Drive
+
+Execute "python3 get_google_token.py" em sua máquina local e siga as instruções.
+
+## Amazon S3 
+
+Para uso de input/output, acesse o cluster e execute o comando "rclone config" e forneça as seguintes informações quando solicitado:
+
+```
+n/s/q> n
+name> nome
+Storage> 4
+provider> 1
+env_auth> 1
+access_key_id> instruções "Requisitos para Amazon S3" no README.md
+secret_access_key> instruções "Requisitos para Amazon S3" no README.md
+region> 16
+endpoint> deixe em branco
+location_constraint> 16
+acl> deixe em branco
+server_side_encryption> deixe em branco
+sse_kms_key_id> deixe em branco
+storage_class> deixe em branco
+y/n> deixe em branco
+y/e/d> deixe em branco
+e/n/d/r/c/s/q> q
+```

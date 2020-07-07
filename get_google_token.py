@@ -33,10 +33,30 @@ def main():
             pickle.dump(creds, token)
 
     with open(TOKEN_FILE, 'rb') as token:
-        TOKEN_FILE_content = base64.b64encode(token.read())
+        TOKEN_FILE_content = token.read()
 
-    print(f'''Salve esse conteúdo na variável de ambiente CREDENTIALS nas configurações de CI/CD do gitlab.com: 
-{str(TOKEN_FILE_content, encoding='ascii')}
+    cred = pickle.loads(TOKEN_FILE_content)
+    print(f'''Para uso de input/output, acesse o cluster e execute o comando "rclone config" e forneça as seguintes informações quando solicitado:
+n/s/q> n
+name> nome para o perfil, a sua escolha
+Storage> 13
+client_id> {cred._client_id}
+client_secret> {cred._client_secret}
+scope> 1
+root_folder_id> deixe em branco
+service_account_file> deixe em branco
+y/n> deixe em branco
+y/n> n
+
+Copie o url e cole no navegador no computador local. Autorize e:
+
+Enter verification code> código fornecido pelo navegador após autorização
+y/n> deixe em branco
+y/e/d> deixe em branco
+e/n/d/r/c/s/q> q
+
+Para uso da disponibilização automática, salve esse conteúdo na variável de ambiente CREDENTIALS nas configurações de CI/CD do github.com: 
+{str(base64.b64encode(TOKEN_FILE_content), encoding='ascii')}
 ''')
 
 
