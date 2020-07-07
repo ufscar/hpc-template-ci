@@ -73,7 +73,7 @@ def upload(fn: str, serv) -> str:
         media = MediaFileUpload(fn, mimetype=mt)
         hj = re.sub(r'\D', '', str(dt2.now()))
         f, e = os.path.splitext(fn)
-        f = os.path.split(f)
+        f = os.path.split(f)[1]
         r = serv.files().create(media_body=media,
                                 body={"name": f+hj+e,
                                       "mimeType": mt,

@@ -43,7 +43,7 @@ def upload(fn: str, serv: Any, bucket: str) -> bool:
     folders = ['containers']+COLLECTION_CONTAINER.split('/')
     hj = re.sub(r'\D', '', str(dt2.now()))
     f, e = os.path.splitext(fn)
-    f = os.path.split(f)
+    f = os.path.split(f)[1]
     object_name = '/'.join(folders+[f+hj+e])
 
     try:
