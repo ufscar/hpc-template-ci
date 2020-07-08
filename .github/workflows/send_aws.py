@@ -24,7 +24,7 @@ def service(region: str = 'sa-east-1') -> Tuple[Any, str]:
     return s3, create_bucket(s3)
 
 
-def create_bucket(serv: Any, bucket_name: str = 'openhpc') -> str:
+def create_bucket(serv: Any, bucket_name: str = 'hpc') -> str:
     buckets = serv.list_buckets()['Buckets']
     bucket_names = [b["Name"] for b in buckets]
     if bucket_name not in bucket_names:
