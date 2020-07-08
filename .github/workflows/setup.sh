@@ -1,4 +1,4 @@
-apt install curl -y
+sudo apt install curl -y
 apt install unzip -y
 curl https://rclone.org/install.sh | bash
 
