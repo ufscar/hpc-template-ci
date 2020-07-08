@@ -15,12 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        env:
-          CLIENT: ${{ secrets.CLIENT }}
         run: /bin/bash .github/workflows/setup.sh
-      - name: Build Singularity image
-        run: sudo singularity build Singularity.simg Singularity
-      - name: Send files
+      - name: Build image and send files
         env:
           ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
           SECRET_GOOGLE: ${{ secrets.SECRET_GOOGLE }}

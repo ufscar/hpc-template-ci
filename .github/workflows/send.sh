@@ -1,3 +1,6 @@
+echo "Criando imagem singularity..."
+sudo singularity build -F Singularity.simg Singularity
+
 echo "Configurando ambiente..."
 if [[ -z $COLLECTION_CONTAINER ]]; then
   COLLECTION_CONTAINER=collection/container
