@@ -49,8 +49,8 @@ name> nome
 Storage> 4
 provider> 1
 env_auth> 1
-access_key_id> instruções "Requisitos para Amazon S3" no README.md
-secret_access_key> instruções "Requisitos para Amazon S3" no README.md
+access_key_id> instruções "Requisitos para Amazon S3"
+secret_access_key> instruções "Requisitos para Amazon S3"
 region> 16
 endpoint> deixe em branco
 location_constraint> 16
