@@ -11,6 +11,10 @@ TOKEN_FILE = os.path.join(SECRETS, '.token')
 CREDENTIALS_FILE = os.path.join(SECRETS, '.credentials')
 
 
+def red(s):
+    return f'\033[91m{s}\033[0m'
+
+
 def main():
     if not os.path.exists(CREDENTIALS_FILE):
         print(f'Copie o arquivo obtido das credenciais do Google API para {CREDENTIALS_FILE}:')
@@ -36,7 +40,17 @@ def main():
         TOKEN_FILE_content = token.read()
 
     cred = pickle.loads(TOKEN_FILE_content)
-    print(f'''Para uso de input/output, acesse o cluster e execute o comando "rclone config" e forneça as seguintes informações quando solicitado:
+    print(f'''
+{red('DISPONIBILIZAÇÃO AUTOMÁTICA EM NUVEM')}
+Salve os conteúdos nas variáveis de ambiente indicadas nas configurações de CI/CD do controle de versão: 
+
+ID_GOOGLE = {cred._client_id}
+SECRET_GOOGLE = {cred._client_secret}
+TOKEN_GOOGLE = {cred.to_json()}
+
+
+{red('ENTRADA E SAÍDA EM NUVEM')}
+Acesse o cluster e execute o comando "rclone config" e forneça as seguintes informações quando solicitado:
 n/s/q> n
 name> nome para o perfil, a sua escolha
 Storage> 13
@@ -54,9 +68,6 @@ Enter verification code> código fornecido pelo navegador após autorização
 y/n> deixe em branco
 y/e/d> deixe em branco
 e/n/d/r/c/s/q> q
-
-Para uso da disponibilização automática, salve esse conteúdo na variável de ambiente CREDENTIALS nas configurações de CI/CD do github.com: 
-{str(base64.b64encode(TOKEN_FILE_content), encoding='ascii')}
 ''')
 
 
