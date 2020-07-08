@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-#    container: quay.io/singularity/singularity:v3.5.3
+    container: quay.io/singularity/singularity:v3.5.3
 
     steps:
       - uses: actions/checkout@v2
@@ -19,14 +19,10 @@ jobs:
         env:
           CLIENT: ${{ secrets.CLIENT }}
         run: /bin/bash .github/workflows/setup.sh
-#      - name: Create token file
-#        env:
-#          SYLABS_TOKEN: ${{ secrets.SYLABS_TOKEN }}
-#        run: echo "$SYLABS_TOKEN" > token_file
 #      - name: Login Sylabs
 #        run: singularity remote login --tokenfile token_file
       - name: Build Singularity image
-        run: singularity build Singularity.simg Singularity
+        run: sudo singularity build Singularity.simg Singularity
       - name: Send files
         env:
           ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
