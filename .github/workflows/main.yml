@@ -19,7 +19,7 @@ jobs:
           CLIENT: ${{ secrets.CLIENT }}
         run: /bin/bash .github/workflows/setup.sh
       - name: Build Singularity image
-        run: singularity build Singularity.simg Singularity
+        run: sudo singularity build Singularity.simg Singularity
       - name: Send files
         env:
           ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
