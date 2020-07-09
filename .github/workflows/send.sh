@@ -1,5 +1,6 @@
 echo "Criando imagem singularity..."
-sudo singularity build -F Singularity.simg Singularity
+sudo singularity build -F Singularity.simg "${RECIPE}"
+cp "${RECIPE}" Singularity
 
 echo "Configurando ambiente..."
 if [[ -z $COLLECTION_CONTAINER ]]; then
@@ -41,7 +42,8 @@ esac
 cat $RCLONE_FILE
 
 echo "Enviando arquivos..."
-for filename; do
+files=( "Singularity" "Singularity.simg" )
+for filename in "${files[@]}"; do
   if [[ -f $filename ]]; then
     path="$(dirname "${filename}")"
     filename="$(basename "${filename}")"
