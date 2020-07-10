@@ -11,6 +11,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    image:
+      name: quay.io/singularity/singularity:v3.5.3
+      entrypoint: [""]
 
     steps:
       - uses: actions/checkout@v2
