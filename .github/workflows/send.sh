@@ -1,6 +1,5 @@
 echo "Criando imagem singularity..."
-sudo singularity build -F Singularity.simg "${RECIPE}"
-cp "${RECIPE}" Singularity
+ls
 
 echo "Configurando ambiente..."
 if [[ -z $COLLECTION_CONTAINER ]]; then
