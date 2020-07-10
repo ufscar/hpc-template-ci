@@ -1,8 +1,8 @@
-Bootstrap: docker
-From: ufscar/ubuntu_ompi:latest
+Bootstrap: library
+From: ufscar/hpc/ubuntu_ompi:latest
 
 %help
-Exemplo para o uso do serviço de nuvem da UFSCar usando container Singularity com OpenMPI
+Template para uso no cluster openHPC da UFSCar de ubuntu com OpenMPI
 
 %files
     # Copie seus arquivos

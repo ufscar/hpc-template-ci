@@ -1,5 +1,5 @@
 echo "Criando imagem singularity..."
-singularity build -F Singularity.simg "${RECIPE}"
+sudo singularity build -F Singularity.simg "${RECIPE}"
 cp "${RECIPE}" Singularity
 
 echo "Configurando ambiente..."
@@ -43,11 +43,11 @@ cat $RCLONE_FILE
 
 echo "Enviando arquivos..."
 files=( "Singularity" "Singularity.simg" )
+NOW=$(date +'%Y%m%d%H%M%S')
 for filename in "${files[@]}"; do
   if [[ -f $filename ]]; then
     path="$(dirname "${filename}")"
     filename="$(basename "${filename}")"
-    NOW=$(date +'%Y%m%d%H%M%S')
     if [[ "$filename" == *.* ]]; then
       dest="${filename%.*}${NOW}.${filename##*.}"
     else
