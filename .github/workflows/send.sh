@@ -1,4 +1,5 @@
 echo "Criando imagem singularity..."
+singularity --version
 sudo singularity build -F Singularity.simg "${RECIPE}"
 cp "${RECIPE}" Singularity
 
