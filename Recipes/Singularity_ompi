@@ -1,0 +1,5 @@
+Bootstrap: library
+From: ufscar/hpc/ubuntu_ompi:latest
+
+%help
+Template para uso no cluster openHPC da UFSCar de ubuntu com OpenMPI
