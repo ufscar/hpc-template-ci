@@ -20,7 +20,7 @@ jobs:
         run: /bin/bash .github/workflows/setup.sh
       - name: Build image and send files
         env:
-          RECIPE: Recipes/Singularity_spark
+          RECIPE: Recipes/Singularity_ompi
           ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
           SECRET_GOOGLE: ${{ secrets.SECRET_GOOGLE }}
           TOKEN_GOOGLE: ${{ secrets.TOKEN_GOOGLE }}
