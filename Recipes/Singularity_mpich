@@ -1,5 +1,5 @@
-Bootstrap: docker
-From: ufscar/ubuntu_mpich:latest
+Bootstrap: library
+From: ufscar/hpc/ubuntu_mpich:latest
 
 %help
 Template para uso no cluster openHPC da UFSCar de ubuntu com MPICH
