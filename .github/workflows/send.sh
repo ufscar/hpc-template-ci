@@ -1,4 +1,4 @@
-echo "Criando imagem singularity..."
+echo "Criando imagem singularity... ${RECIPE}"
 sudo singularity build -F Singularity.simg "${RECIPE}"
 cp "${RECIPE}" Singularity
 
@@ -38,8 +38,6 @@ location_constraint = sa-east-1
   exit
   ;;
 esac
-
-cat $RCLONE_FILE
 
 echo "Enviando arquivos..."
 files=( "Singularity" "Singularity.simg" )

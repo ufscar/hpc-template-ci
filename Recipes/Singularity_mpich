@@ -2,7 +2,7 @@ Bootstrap: docker
 From: ufscar/ubuntu_mpich:latest
 
 %help
-Exemplo para o uso do serviço de nuvem da UFSCar usando container Singularity com MPICH
+Template para uso no cluster openHPC da UFSCar de ubuntu com MPICH
 
 %files
     # Copie seus arquivos
