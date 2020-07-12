@@ -20,7 +20,7 @@ jobs:
         run: /bin/bash .github/workflows/setup.sh
       - name: Build image and send files
         env:
-          RECIPE: Recipes/Singularity_mpich
+          RECIPE: Recipes/Singularity_pytorch_full
           ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
           SECRET_GOOGLE: ${{ secrets.SECRET_GOOGLE }}
           TOKEN_GOOGLE: ${{ secrets.TOKEN_GOOGLE }}
