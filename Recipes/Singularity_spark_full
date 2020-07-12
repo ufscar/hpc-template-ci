@@ -2,7 +2,7 @@ Bootstrap: docker
 From: archlinux
 
 %help
-Imagem disponivel em https://cloud.sylabs.io/library/ufscar/default/arch_spark
+Recipe de library://ufscar/hpc/arch_spark
 
 %runscript
   exec echo "Try running with --app master/slave"

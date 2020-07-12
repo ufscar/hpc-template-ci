@@ -2,7 +2,7 @@ Bootstrap: docker
 From: nvidia/cuda:10.2-base-ubuntu18.04
 
 %help
-Fonte desconhecida
+Recipe de library://ufscar/hpc/cuda_pytorch / Fonte desconhecida
 
 %post
   # Install some basic utilities
