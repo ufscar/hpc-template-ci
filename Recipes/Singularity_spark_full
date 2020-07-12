@@ -7,7 +7,7 @@ Imagem disponivel em https://cloud.sylabs.io/library/ufscar/default/arch_spark
 %runscript
   exec echo "Try running with --app master/slave"
 
-$apprun master
+%apprun master
   exec echo "Starting Spark Master"
   /apache-spark/run-master.sh "$@"
 

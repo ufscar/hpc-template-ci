@@ -5,13 +5,13 @@ From: ufscar/hpc/cuda_pytorch:latest
 Template para uso no cluster openHPC da UFSCar com CUDA e PyTorch
 
 #%files
-    # Copie seus arquivos
+  # Copie seus arquivos
 
 #%post
-    # Execute comandos na criação do container, por exemplo para compilar seus programas
+  # Execute comandos na criação do container, por exemplo para compilar seus programas
 
 #%runscript
-    # Execute comandos na execução do container
+  # Execute comandos na execução do container
 
 #%test
-    # Teste a criação do container
+  # Teste a criação do container

@@ -5,13 +5,13 @@ From: ufscar/hpc/arch_spark:latest
 Template para uso no cluster openHPC da UFSCar com Apache Spark
 
 #%files
-    # Copie seus arquivos
+  # Copie seus arquivos
 
 #%post
-    # Execute comandos na criação do container, por exemplo para compilar seus programas
+  # Execute comandos na criação do container, por exemplo para compilar seus programas
 
 #%runscript
-    # Execute comandos na execução do container
+  # Execute comandos na execução do container
 
 #%test
-    # Teste a criação do container
+  # Teste a criação do container
