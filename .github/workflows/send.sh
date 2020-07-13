@@ -1,6 +1,5 @@
 echo "Criando imagem singularity... ${RECIPE}"
-sudo singularity build -F Singularity.simg "${RECIPE}"
-cp "${RECIPE}" Singularity
+sudo singularity build -F "${RECIPE}.simg" "${RECIPE}"
 
 echo "Configurando ambiente..."
 if [[ -z $COLLECTION_CONTAINER ]]; then
@@ -40,16 +39,16 @@ location_constraint = sa-east-1
 esac
 
 echo "Enviando arquivos..."
-files=( "Singularity" "Singularity.simg" )
+files=( "${RECIPE}" "${RECIPE}.simg" )
 NOW=$(date +'%Y%m%d%H%M%S')
 for filename in "${files[@]}"; do
   if [[ -f $filename ]]; then
     path="$(dirname "${filename}")"
     filename="$(basename "${filename}")"
     if [[ "$filename" == *.* ]]; then
-      dest="${filename%.*}${NOW}.${filename##*.}"
+      dest="${filename%.*}_${NOW}.${filename##*.}"
     else
-      dest="${filename}${NOW}"
+      dest="${filename}_${NOW}"
     fi
     rclone copyto "${path}/${filename}" "remote:hpc/containers/${COLLECTION_CONTAINER}/${dest}"
   fi
