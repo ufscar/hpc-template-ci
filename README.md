@@ -2,7 +2,7 @@
 
 ## Seleção do Recipe
 
-Para começar, ponha o caminho do _singularity recipe_ desejado na variável RECIPE do arquivo `.github/workflows/main.yml`.
+Adicione o caminho do _singularity recipe_ desejado na variável RECIPE no github (projeto >> Settings >> Secrets >> New Secret).
 
 # Template Integração Contínua Github
 
