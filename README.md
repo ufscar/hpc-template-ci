@@ -2,6 +2,10 @@
 
 Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e Amazon S3.
 
+## Seleção do Recipe
+
+Para começar, ponha o caminho do _singularity recipe_ desejado na variável RECIPE do arquivo `.github/workflows/main.yml`.
+
 ## Requisitos para Google Drive
 
 1. Entre no [console de credenciais de API do Google](https://console.developers.google.com/apis/credentials)
