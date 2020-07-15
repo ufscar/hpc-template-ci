@@ -28,4 +28,4 @@ jobs:
           ACCESS_KEY_AWS: ${{ secrets.ACCESS_KEY_AWS }}
           SECRET_KEY_AWS: ${{ secrets.SECRET_KEY_AWS }}
           CLIENT: ${{ secrets.CLIENT }}
-        run: echo "Singularit Recipe - ${RECIPE}" && /bin/bash .github/workflows/send.sh
+        run: /bin/bash .github/workflows/send.sh
