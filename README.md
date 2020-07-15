@@ -1,10 +1,12 @@
-# Template Integração Contínua Github
-
-Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e Amazon S3.
+# Pré-requisitos
 
 ## Seleção do Recipe
 
 Para começar, ponha o caminho do _singularity recipe_ desejado na variável RECIPE do arquivo `.github/workflows/main.yml`.
+
+# Template Integração Contínua Github
+
+Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e Amazon S3.
 
 ## Requisitos para Google Drive
 
