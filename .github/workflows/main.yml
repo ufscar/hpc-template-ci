@@ -21,11 +21,6 @@ jobs:
       - name: Build image and send files
         env:
           RECIPE: ${{ secrets.RECIPE }}
-          ID_GOOGLE: ${{ secrets.ID_GOOGLE }}
-          SECRET_GOOGLE: ${{ secrets.SECRET_GOOGLE }}
-          TOKEN_GOOGLE: ${{ secrets.TOKEN_GOOGLE }}
           COLLECTION_CONTAINER: ${{ secrets.COLLECTION_CONTAINER }}
-          ACCESS_KEY_AWS: ${{ secrets.ACCESS_KEY_AWS }}
-          SECRET_KEY_AWS: ${{ secrets.SECRET_KEY_AWS }}
-          CLIENT: ${{ secrets.CLIENT }}
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         run: /bin/bash .github/workflows/send.sh
