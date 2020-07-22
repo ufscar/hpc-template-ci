@@ -4,7 +4,7 @@
 
 Adicione o caminho do _singularity recipe_ desejado na variável RECIPE no github (projeto >> Settings >> Secrets >> New Secret).
 
-# Template Integração Contínua github
+# Template Integração Contínua Github
 
 Esse projeto o template para uso do cluster da UFSCar, contendo integração contínua com o Google Drive e Amazon S3.
 
