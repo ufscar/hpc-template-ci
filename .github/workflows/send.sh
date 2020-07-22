@@ -9,12 +9,7 @@ RCLONE_FILE=~/.config/rclone/rclone.conf
 mkdir -p "$(dirname "${RCLONE_FILE}")"
 
 echo "Configurando rclone..."
-echo "${RCLONE}" | base64 -d >> "${RCLONE_FILE}"
-echo "-----------------------------------------------"
-cat "${RCLONE_FILE}"
-echo "-----------------------------------------------"
-echo "$(cat ${RCLONE_FILE})"
-echo "-----------------------------------------------"
+echo "${RCLONE_CONF}" | base64 -d >> "${RCLONE_FILE}"
 
 echo "Enviando arquivos..."
 files=( "${RECIPE}" "${RECIPE}.simg" )
