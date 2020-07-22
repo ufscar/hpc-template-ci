@@ -41,7 +41,7 @@ Para esse serviço usaremos o _software_ rclone, tanto para Google Drive quanto 
 
 ## Google Drive
 
-Execute "python3 get_google_token.py" em sua máquina local e siga as instruções.
+Execute `python3 get_google_token.py` em sua máquina local e siga as instruções.
 
 ## Amazon S3 
 
