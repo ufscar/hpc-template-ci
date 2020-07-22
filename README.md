@@ -45,7 +45,7 @@ Execute `python3 get_google_token.py` em sua máquina local e siga as instruçõ
 
 ## Amazon S3 
 
-Para uso de input/output, acesse o cluster e execute o comando "rclone config" e forneça as seguintes informações quando solicitado:
+Para uso de input/output, acesse o cluster e execute o comando `rclone config` e forneça as seguintes informações quando solicitado:
 
 ```
 n/s/q> n
