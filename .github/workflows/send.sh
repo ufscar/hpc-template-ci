@@ -1,5 +1,4 @@
 echo "Criando imagem singularity... ${RECIPE}"
-sudo echo "user.max_user_namespaces=15076" >> /etc/sysctl.conf
 sudo echo 1 > /proc/sys/kernel/unprivileged_userns_clone
 sudo singularity build -F "${RECIPE}.simg" "${RECIPE}"
 
