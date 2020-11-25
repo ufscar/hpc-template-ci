@@ -86,4 +86,4 @@ echo $(cat ~/.config/rclone/rclone.conf | base64 --wrap=0)
 ```
 
 7. Copie a saída e adicione à variável RCLONE_CONF no github.
-8. Adicione no github à variável COLLECTION_CONTAINER `/path/to/project`, esse será o caminho cujo container vai ser disponibilizado no seu Google Drive no formato `recipe_name_DateTime.simg`.
+8. Adicione no github à variável COLLECTION_CONTAINER `/path/to/project`, esse será o caminho cujo container vai ser disponibilizado no seu Google Drive no formato `recipe_name_DateTime.simg`
