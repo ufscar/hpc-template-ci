@@ -1,6 +1,5 @@
 echo "Criando imagem singularity... ${RECIPE}"
-sudo echo 1 > /proc/sys/kernel/unprivileged_userns_clone
-sudo singularity build -F "${RECIPE}.simg" "${RECIPE}"
+singularity build "${RECIPE}.simg" "${RECIPE}"
 
 echo "Configurando ambiente..."
 if [[ -z $COLLECTION_CONTAINER ]]; then
