@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: quay.io/singularity/singularity:v3.5.3
+      image: quay.io/singularity/singularity:v3.7.0
 
     steps:
       - uses: actions/checkout@v2
