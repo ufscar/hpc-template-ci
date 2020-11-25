@@ -1,4 +1,5 @@
 echo "Criando imagem singularity... ${RECIPE}"
+echo "user.max_user_namespaces=15076" >> /etc/sysctl.conf
 sudo singularity build -F "${RECIPE}.simg" "${RECIPE}"
 
 echo "Configurando ambiente..."
