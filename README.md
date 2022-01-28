@@ -21,7 +21,7 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 ```
 n/s/q> n
 name> cloud
-Storage> 13
+Storage> 15 # selecione aqui o número correspondente a opção "Google Drive"
 client_id> conteúdo de "Seu ID de cliente"
 client_secret> conteúdo de "Sua chave secreta de cliente"
 scope> 1
