@@ -22,7 +22,7 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 ```
 n/s/q> n
 name> cloud
-Storage> 16 # selecione aqui o número correspondente a opção "Google Drive"
+Storage> 17 # selecione aqui o número correspondente a opção "Google Drive"
 client_id> conteúdo de "Seu ID de cliente"
 client_secret> conteúdo de "Sua chave secreta de cliente"
 scope> 1  # Full access all files, excluding Application Data Folder
@@ -31,9 +31,9 @@ service_account_file> deixe em branco
 y/n> deixe em branco
 y/n> n
 
-Copie o url e cole no navegador no computador local. Autorize e:
+Se já tiver o rclone instalado em seu computador, execute o comando exibido, caso contrário, o instale conforme indicado na página oficial do rclone dependendo do seu sistema operacional (https://rclone.org/install/). A Seguir insira o resultado do comando exibido:
 
-Enter verification code> código fornecido pelo navegador após autorização
+config_token> código fornecido pelo terminal após autorização
 y/n> deixe em branco
 y/e/d> deixe em branco
 e/n/d/r/c/s/q> q
