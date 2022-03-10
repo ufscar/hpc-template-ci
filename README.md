@@ -11,12 +11,13 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 ## Requisitos para Google Drive
 
 1. Entre no [console de credenciais de API do Google](https://console.developers.google.com/apis/credentials)
-2. Se ainda não houver um projeto, crie um com permissão para a "Google Drive API".
-3. Clique em "Criar credenciais".
-4. Selecione "ID do cliente do OAuth".
-5. Em "Tipo de aplicativo", selecione "App para computador".
-6. Dê um nome de identificação para as credenciais e clique em "criar". Vão aparecer dois dados ("Seu ID de cliente" e "Sua chave secreta de cliente"), precisaremos dos dois no passo seguinte.
-7. Acesse o _cluster_, execute o comando `rclone config` e forneça as seguintes informações quando solicitado:
+2. Se ainda não houver um projeto, crie um com permissão para a "Google Drive API" (Dashboard).
+3. Em "Tela de consentimento OAuth", marque "Interno" na primeira página, preencha os campos obrigatórios na segunda, não preencha nada na terceira, 
+4. Clique em Credenciais > Criar credenciais.
+5. Selecione "ID do cliente do OAuth".
+6. Em "Tipo de aplicativo", selecione "App para computador".
+7. Dê um nome de identificação para as credenciais e clique em "criar". Vão aparecer dois dados ("Seu ID de cliente" e "Sua chave secreta de cliente"), precisaremos dos dois no passo seguinte.
+8. Acesse o _cluster_, execute o comando `rclone config` e forneça as seguintes informações quando solicitado:
 
 ```
 n/s/q> n
@@ -24,7 +25,7 @@ name> cloud
 Storage> 15 # selecione aqui o número correspondente a opção "Google Drive"
 client_id> conteúdo de "Seu ID de cliente"
 client_secret> conteúdo de "Sua chave secreta de cliente"
-scope> 1
+scope> 1  # Full access all files, excluding Application Data Folder
 root_folder_id> deixe em branco
 service_account_file> deixe em branco
 y/n> deixe em branco
