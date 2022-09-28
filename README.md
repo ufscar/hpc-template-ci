@@ -11,9 +11,9 @@ Esse projeto o template para uso do cluster da UFSCar, contendo integração con
 ## Requisitos para Google Drive
 
 1. Entre no [console de credenciais de API do Google](https://console.developers.google.com/apis/credentials)
-2. Se ainda não houver um projeto, crie um com permissão para a "Google Drive API" (Dashboard).
-3. Em "Tela de consentimento OAuth", marque "Interno" na primeira página, preencha os campos obrigatórios na segunda, não preencha nada na terceira, 
-4. Clique em Credenciais > Criar credenciais.
+2. Se ainda não houver um projeto, crie um.
+3. Em "Ativar API e Serviços", busque por "Google Drive" e ative a permissão.
+4. Clique em "Criar credenciais".
 5. Selecione "ID do cliente do OAuth".
 6. Em "Tipo de aplicativo", selecione "App para computador".
 7. Dê um nome de identificação para as credenciais e clique em "criar". Vão aparecer dois dados ("Seu ID de cliente" e "Sua chave secreta de cliente"), precisaremos dos dois no passo seguinte.
